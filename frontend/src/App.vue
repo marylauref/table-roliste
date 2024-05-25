@@ -1,23 +1,68 @@
-<script setup>
-import { RouterView } from 'vue-router'
-// import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+<script>
+	import { RouterView } from 'vue-router'
+	// import { RouterLink, RouterView } from 'vue-router'
+	// import HelloWorld from './components/HelloWorld.vue'
+
+	export default {
+		components: {
+			RouterView,
+		},
+		data: () => ({
+			drawer: false,
+			group: null,
+			items: [
+				{
+					title: 'Foo',
+					value: 'foo',
+				},
+				{
+					title: 'Bar',
+					value: 'bar',
+				},
+				{
+					title: 'Fizz',
+					value: 'fizz',
+				},
+				{
+					title: 'Buzz',
+					value: 'buzz',
+				},
+			],
+		}),
+
+		watch: {
+			group () {
+				this.drawer = false
+			},
+		},
+	}
 </script>
 
 <template>
-	<!-- <header>
-		<img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+	<v-layout>
+		<!-- TODO creuser plus loins pour voir le fonctionnement du layou vuetify -->
 
-		<div class="wrapper">
-			<HelloWorld msg="You did it!" />
-
-			<nav>
-				<RouterLink to="/">Home</RouterLink>
-				<RouterLink to="/about">About</RouterLink>
-			</nav>
-		</div>
-	</header> -->
-
+		<header>
+			<v-toolbar color="primary">
+				<v-btn icon>
+					<v-icon icon="fas fa-home" />
+				</v-btn>
+				<!-- <v-app-bar-nav-icon variant="text" ><v-icon icon="fas fa-home" /></v-app-bar-nav-icon> -->
+				<v-toolbar-title>Table Roliste</v-toolbar-title>
+				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+			</v-toolbar>
+		</header>
+		<v-navigation-drawer
+			v-model="drawer"
+			:location="$vuetify.display.mobile ? 'bottom' : undefined"
+			temporary
+		>
+			<v-list
+				:items="items"
+			></v-list>
+		</v-navigation-drawer>
+	
+	</v-layout>
 	<RouterView />
 </template>
 
