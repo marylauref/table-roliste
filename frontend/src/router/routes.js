@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import FindAPartyView from '../views/FindAPartyView.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +8,20 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: HomeView
+			component: HomeView,
+			// redirect: '/trouverUnePartie',
+		},
+		{
+			path: '/trouverUnePartie',
+			name: 'Trouver une partie',
+			component: FindAPartyView,
+			children: [
+				{
+					path: '2',
+					name: 'Trouver une partie 2',
+					component: FindAPartyView,
+				},
+			],
 		},
 		// {
 		// 	path: '/about',

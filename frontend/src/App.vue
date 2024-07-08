@@ -28,6 +28,18 @@
 					value: 'buzz',
 				},
 			],
+			breadcrumbsList: [
+				{
+					title: "accueil",
+					to: "/",
+					disabled: false,
+				}, 
+				{
+					title: "tourver une partie",
+					to: "/trouverUnePartie",
+					disabled: false,
+				}, 
+			],
 		}),
 
 		watch: {
@@ -35,6 +47,11 @@
 				this.drawer = false
 			},
 		},
+
+		mounted() {
+			console.log("$route", this.$route);
+			console.log("$route.params.id ", this.$route.params.id );
+		}
 	}
 </script>
 
@@ -63,6 +80,7 @@
 		</v-navigation-drawer>
 	
 	</v-layout>
+	<v-breadcrumbs :items="breadcrumbsList"></v-breadcrumbs>
 	<RouterView />
 </template>
 
