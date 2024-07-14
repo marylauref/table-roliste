@@ -7,7 +7,7 @@
 			>
 				{{ item.text }}
 			</v-breadcrumbs-item>
-    </template>
+	</template>
 	</v-breadcrumbs>
 </template>
 
@@ -22,7 +22,7 @@
 		computed: {
 			breadcrumbsList() {
 
-				let breadCrumb = this.$route.meta.breadCrumb;	
+				let breadCrumb = this.$route.meta.breadCrumb;
 				if (breadCrumb === undefined) return [];
 
 				const lastIndex = breadCrumb.length - 1;

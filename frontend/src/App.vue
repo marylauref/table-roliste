@@ -1,38 +1,23 @@
 <template>
-	<v-layout>
+	<v-app>
 		<!-- TODO creuser plus loins pour voir le fonctionnement du layou vuetify -->
 		<!-- <v-container>
 			<v-row>
 				<v-col></v-col>
 			</v-row>
 		</v-container> -->
-		<header>
-			<v-toolbar color="primary">
-				<v-btn icon>
-					<v-icon icon="fas fa-home" />
-				</v-btn>
-				<!-- <v-app-bar-nav-icon variant="text" ><v-icon icon="fas fa-home" /></v-app-bar-nav-icon> -->
-				<v-toolbar-title>Table Roliste</v-toolbar-title>
-				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-			</v-toolbar>
-		</header>
-		<v-navigation-drawer
-			v-model="drawer"
-			:location="$vuetify.display.mobile ? 'bottom' : undefined"
-			temporary
-		>
-			<v-list
-				:items="items"
-			></v-list>
-		</v-navigation-drawer>
-	</v-layout>
-	<breadCrumbs></breadCrumbs>
-	<RouterView />
+		<navbar></navbar>
+		<v-main>
+			<breadCrumbs></breadCrumbs>
+			<RouterView />
+		</v-main>
+	</v-app>
 </template>
 
 <script>
 	import { RouterView } from 'vue-router'
 	import breadCrumbs from "./components/breadCrumbs.vue"
+	import navbar from "./components/navbar.vue"
 	// import { RouterLink, RouterView } from 'vue-router'
 	// import HelloWorld from './components/HelloWorld.vue'
 
@@ -40,41 +25,22 @@
 		components: {
 			RouterView,
 			breadCrumbs,
-		},
-		data: () => ({
-			drawer: false,
-			group: null,
-			items: [
-				{
-					title: 'Foo',
-					value: 'foo',
-				},
-				{
-					title: 'Bar',
-					value: 'bar',
-				},
-				{
-					title: 'Fizz',
-					value: 'fizz',
-				},
-				{
-					title: 'Buzz',
-					value: 'buzz',
-				},
-			],
-		}),
-
-		computed: {
+			navbar,
 		},
 
-		watch: {
-			group () {
-				this.drawer = false
-			},
-		},
+		props: {},
 
-		mounted() {
-		}
+		emits: {},
+
+		data: () => ({}),
+
+		computed: {},
+
+		watch: {},
+
+		methods: {},
+
+		mounted() {},
 	}
 </script>
 
