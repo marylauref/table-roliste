@@ -7,19 +7,48 @@ const router = createRouter({
 	routes: [
 		{
 			path: '/',
-			name: 'home',
+			name: 'Home',
 			component: HomeView,
 			// redirect: '/trouverUnePartie',
+			meta: {
+				breadCrumb: [
+					{
+						text: "Home",
+					},
+				],
+			},
 		},
 		{
 			path: '/trouverUnePartie',
 			name: 'Trouver une partie',
 			component: FindAPartyView,
+			meta: {
+				breadCrumb: [
+					{
+						text: "Home",
+						to: { name: 'Home' },
+					},
+					{ text: "Trouver une partie" },
+				],
+			},
 			children: [
 				{
 					path: '2',
 					name: 'Trouver une partie 2',
 					component: FindAPartyView,
+					meta: {
+						breadCrumb: [
+							{
+								text: "Home",
+								to: { name: 'Home' },
+							},
+							{
+								text: "Trouver une partie",
+								to: { name: 'Trouver une partie' },
+							},
+							{ text: "Trouver une partie 2" },
+						],
+					},
 				},
 			],
 		},

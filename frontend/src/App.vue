@@ -1,11 +1,45 @@
+<template>
+	<v-layout>
+		<!-- TODO creuser plus loins pour voir le fonctionnement du layou vuetify -->
+		<!-- <v-container>
+			<v-row>
+				<v-col></v-col>
+			</v-row>
+		</v-container> -->
+		<header>
+			<v-toolbar color="primary">
+				<v-btn icon>
+					<v-icon icon="fas fa-home" />
+				</v-btn>
+				<!-- <v-app-bar-nav-icon variant="text" ><v-icon icon="fas fa-home" /></v-app-bar-nav-icon> -->
+				<v-toolbar-title>Table Roliste</v-toolbar-title>
+				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+			</v-toolbar>
+		</header>
+		<v-navigation-drawer
+			v-model="drawer"
+			:location="$vuetify.display.mobile ? 'bottom' : undefined"
+			temporary
+		>
+			<v-list
+				:items="items"
+			></v-list>
+		</v-navigation-drawer>
+	</v-layout>
+	<breadCrumbs></breadCrumbs>
+	<RouterView />
+</template>
+
 <script>
 	import { RouterView } from 'vue-router'
+	import breadCrumbs from "./components/breadCrumbs.vue"
 	// import { RouterLink, RouterView } from 'vue-router'
 	// import HelloWorld from './components/HelloWorld.vue'
 
 	export default {
 		components: {
 			RouterView,
+			breadCrumbs,
 		},
 		data: () => ({
 			drawer: false,
@@ -28,19 +62,10 @@
 					value: 'buzz',
 				},
 			],
-			breadcrumbsList: [
-				{
-					title: "accueil",
-					to: "/",
-					disabled: false,
-				}, 
-				{
-					title: "tourver une partie",
-					to: "/trouverUnePartie",
-					disabled: false,
-				}, 
-			],
 		}),
+
+		computed: {
+		},
 
 		watch: {
 			group () {
@@ -49,40 +74,9 @@
 		},
 
 		mounted() {
-			console.log("$route", this.$route);
-			console.log("$route.params.id ", this.$route.params.id );
 		}
 	}
 </script>
-
-<template>
-	<v-layout>
-		<!-- TODO creuser plus loins pour voir le fonctionnement du layou vuetify -->
-
-		<header>
-			<v-toolbar color="primary">
-				<v-btn icon>
-					<v-icon icon="fas fa-home" />
-				</v-btn>
-				<!-- <v-app-bar-nav-icon variant="text" ><v-icon icon="fas fa-home" /></v-app-bar-nav-icon> -->
-				<v-toolbar-title>Table Roliste</v-toolbar-title>
-				<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-			</v-toolbar>
-		</header>
-		<v-navigation-drawer
-			v-model="drawer"
-			:location="$vuetify.display.mobile ? 'bottom' : undefined"
-			temporary
-		>
-			<v-list
-				:items="items"
-			></v-list>
-		</v-navigation-drawer>
-	
-	</v-layout>
-	<v-breadcrumbs :items="breadcrumbsList"></v-breadcrumbs>
-	<RouterView />
-</template>
 
 <style scoped>
 header {
