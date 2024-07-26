@@ -1,56 +1,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FindAPartyView from '../views/FindAPartyView.vue'
+import MyAccountView from '../views/MyAccountView.vue'
+import addBreadCrumbMetaData from './breadCrumb'
 
-const router = createRouter({
+const routesOptions = {
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
 			path: '/',
-			name: 'Home',
+			name: 'home',
 			component: HomeView,
-			// redirect: '/trouverUnePartie',
+			alias: "/home",
+			// redirect: '/findAParty',
 			meta: {
-				breadCrumb: [
-					{
-						text: "Home",
-					},
-				],
+				text: "Accueil",
 			},
 		},
 		{
-			path: '/trouverUnePartie',
-			name: 'Trouver une partie',
+			path: '/findAParty',
+			name: 'findAParty',
 			component: FindAPartyView,
 			meta: {
-				breadCrumb: [
-					{
-						text: "Home",
-						to: { name: 'Home' },
-					},
-					{ text: "Trouver une partie" },
-				],
+				text: "Trouver une partie",
 			},
-			children: [
-				{
-					path: '2',
-					name: 'Trouver une partie 2',
-					component: FindAPartyView,
-					meta: {
-						breadCrumb: [
-							{
-								text: "Home",
-								to: { name: 'Home' },
-							},
-							{
-								text: "Trouver une partie",
-								to: { name: 'Trouver une partie' },
-							},
-							{ text: "Trouver une partie 2" },
-						],
-					},
-				},
-			],
+			// children: [
+			// 	{
+			// 		path: '2',
+			// 		name: 'Trouver une partie 2',
+			// 		component: FindAPartyView,
+			// 		meta: {
+			// 			breadCrumb: [
+			// 				{
+			// 					text: "Home",
+			// 					to: { name: 'Home' },
+			// 				},
+			// 				{
+			// 					text: "Trouver une partie",
+			// 					to: { name: 'Trouver une partie' },
+			// 				},
+			// 				{ text: "Trouver une partie 2" },
+			// 			],
+			// 		},
+			// 	},
+			// ],
+		},
+		{
+			path: '/MyAccount',
+			name: 'myAccount',
+			component: MyAccountView,
+			meta: {
+				text: "Mon compte",
+			},
 		},
 		// {
 		// 	path: '/about',
@@ -61,6 +62,8 @@ const router = createRouter({
 		// 	component: () => import('../views/AboutView.vue')
 		// }
 	]
-})
+};
+addBreadCrumbMetaData(routesOptions.routes);
+const router = createRouter(routesOptions);
 
 export default router
