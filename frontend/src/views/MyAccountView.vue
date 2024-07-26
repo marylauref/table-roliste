@@ -1,12 +1,12 @@
 <template>
 	<main>
-		Home page
+		My account page
 	</main>
 </template>
 
 <script>
 export default {
-	name: "HomeView",
+	name: "MyAccountView",
 	components: {
 	},
 	data() {

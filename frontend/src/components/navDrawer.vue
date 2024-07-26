@@ -36,15 +36,15 @@
 				{
 					// TODO faire fonctionner les liens du navigator drawer
 					title: 'Accueil',
-					to: 'foo',
+					to: 'home',
 				},
 				{
 					title: 'Mon Compte',
-					to: 'bar',
+					to: 'myAccount',
 				},
 				{
 					title: 'Trouver une table',
-					to: 'fizz',
+					to: 'findAParty',
 				},
 				{
 					title: 'Mes parties',
