@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import addBreadCrumbMetaData from './breadCrumb'
 import HomeView from '../views/HomeView.vue'
 import FindAPartyView from '../views/FindAPartyView.vue'
 import MyAccountView from '../views/MyAccountView.vue'
-import addBreadCrumbMetaData from './breadCrumb'
+import MyPartiesView from '../views/MyPartiesView.vue'
 
 const routesOptions = {
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,14 @@ const routesOptions = {
 			// redirect: '/findAParty',
 			meta: {
 				text: "Accueil",
+			},
+		},
+		{
+			path: '/MyAccount',
+			name: 'myAccount',
+			component: MyAccountView,
+			meta: {
+				text: "Mon compte",
 			},
 		},
 		{
@@ -46,11 +55,11 @@ const routesOptions = {
 			// ],
 		},
 		{
-			path: '/MyAccount',
-			name: 'myAccount',
-			component: MyAccountView,
+			path: '/myParties',
+			name: 'myParties',
+			component: MyPartiesView,
 			meta: {
-				text: "Mon compte",
+				text: "Mes parties",
 			},
 		},
 		// {

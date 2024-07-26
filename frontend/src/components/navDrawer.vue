@@ -32,28 +32,21 @@
 
 		data: () => ({
 			isDrawerVisible: false,
-			items: [
-				{
-					// TODO faire fonctionner les liens du navigator drawer
-					title: 'Accueil',
-					to: 'home',
-				},
-				{
-					title: 'Mon Compte',
-					to: 'myAccount',
-				},
-				{
-					title: 'Trouver une table',
-					to: 'findAParty',
-				},
-				{
-					title: 'Mes parties',
-					to: 'buzz',
-				},
-			],
+			routes: [],
+			home: null,
+			linksNameList: ["home", "myAccount", "findAParty", "myParties"],
 		}),
 
-		computed: {},
+		computed: {
+			items() {
+				return this.linksNameList.map( linkName => {
+					return {
+						title: this[linkName].meta.text,
+						to: this[linkName].path,
+					};
+				});
+			}
+		},
 
 		watch: {
 			isDrawerVisibleProp () {
@@ -62,6 +55,17 @@
 		},
 
 		methods: {
+			getItemsOptions(nameRoute) {
+				return this.routes.find( route => route.name === nameRoute);
+			}
+		},
+
+		beforeMount() {
+
+			this.routes = this.$router.getRoutes();
+			this.linksNameList.forEach( linkName => {
+				this[linkName] = this.getItemsOptions(linkName);
+			});
 		},
 
 		mounted() {
