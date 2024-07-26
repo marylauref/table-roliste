@@ -13,7 +13,7 @@ const routesOptions = {
 			name: 'home',
 			component: HomeView,
 			alias: "/home",
-			// redirect: '/findAParty',
+			redirect: '/findAParty',
 			meta: {
 				text: "Accueil",
 			},

@@ -8,6 +8,8 @@ import * as directives from 'vuetify/directives'
 import { aliases, fa } from 'vuetify/iconsets/fa'
 import '@fortawesome/fontawesome-free/css/all.css'
 
+import colors from 'vuetify/util/colors'
+
 import App from './App.vue'
 import router from './router/routes'
 
@@ -23,6 +25,16 @@ const vuetify = createVuetify({
             fa,
         },
     },
+    theme: {
+        themes: {
+            light: {
+                colors: {
+                    primary: colors.teal.base,
+                    secondary: colors.blueGrey.base,
+                }
+            }
+        }
+    }
 });
 
 app.use(createPinia())

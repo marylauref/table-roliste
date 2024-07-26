@@ -8,7 +8,7 @@
 	import navDrawer from "./navDrawer.vue"
 
 	export default {
-		name: "navbar",
+		name: "navBarComponent",
 
 		components: {
 			navHeader,

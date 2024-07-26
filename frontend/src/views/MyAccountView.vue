@@ -1,7 +1,12 @@
 <template>
 	<main>
-		My account page
-	</main>
+		<v-btn color="primary">
+			Deconnexion
+		</v-btn>
+		<v-btn color="secondary">
+			Supprimer mon compte
+		</v-btn>
+</main>
 </template>
 
 <script>
@@ -15,3 +20,12 @@ export default {
 	},
 }
 </script>
+
+<style lang="less" scoped>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+</style>

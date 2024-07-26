@@ -6,7 +6,7 @@
 				<v-col></v-col>
 			</v-row>
 		</v-container> -->
-		<navbar></navbar>
+		<navBarComponent></navBarComponent>
 		<v-main>
 			<breadCrumbs></breadCrumbs>
 			<RouterView />
@@ -17,7 +17,7 @@
 <script>
 	import { RouterView } from 'vue-router'
 	import breadCrumbs from "./components/breadCrumbs.vue"
-	import navbar from "./components/navbar.vue"
+	import navBarComponent from "./components/navBarComponent.vue"
 	// import { RouterLink, RouterView } from 'vue-router'
 	// import HelloWorld from './components/HelloWorld.vue'
 
@@ -25,7 +25,7 @@
 		components: {
 			RouterView,
 			breadCrumbs,
-			navbar,
+			navBarComponent,
 		},
 
 		props: {},

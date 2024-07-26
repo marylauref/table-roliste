@@ -1,8 +1,8 @@
 <template>
 	<v-app-bar>
 		<v-toolbar color="primary">
-			<v-btn icon>
-				<v-icon icon="fas fa-home" />
+			<v-btn icon :to="'/'">
+				<v-icon icon="fas fa-home"/>
 			</v-btn>
 			<!-- <v-app-bar-nav-icon variant="text" ><v-icon icon="fas fa-home" /></v-app-bar-nav-icon> -->
 			<v-toolbar-title>Table Roliste</v-toolbar-title>
