@@ -17,7 +17,7 @@
 <script>
 	import { RouterView } from 'vue-router'
 	import breadCrumbs from "./components/breadCrumbs.vue"
-	import navBarComponent from "./components/navBarComponent.vue"
+	import navBarComponent from "./components/navBar/navBarComponent.vue"
 	// import { RouterLink, RouterView } from 'vue-router'
 	// import HelloWorld from './components/HelloWorld.vue'
 

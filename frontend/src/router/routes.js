@@ -13,7 +13,7 @@ const routesOptions = {
 			name: 'home',
 			component: HomeView,
 			alias: "/home",
-			redirect: '/findAParty',
+			redirect: '/findParties',
 			meta: {
 				text: "Accueil",
 			},
@@ -27,7 +27,7 @@ const routesOptions = {
 			},
 		},
 		{
-			path: '/findAParty',
+			path: '/findParties',
 			name: 'findAParty',
 			component: FindAPartyView,
 			meta: {

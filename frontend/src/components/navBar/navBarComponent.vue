@@ -1,10 +1,10 @@
 <template>
-	<navHeader @openNavbarDrawerEmit="openNavbarDrawerEvent"></navHeader>
-	<navDrawer :isDrawerVisibleProp="isDrawerVisible"></navDrawer>
+	<navHeader @openNavbarDrawerEmit="openNavbarDrawerEvent"/>
+	<navDrawer :isDrawerVisibleProp="isDrawerVisible"/>
 </template>
 
 <script>
-	import navHeader from "./navHeader.vue";
+	import navHeader from "./navHeader.vue"
 	import navDrawer from "./navDrawer.vue"
 
 	export default {
@@ -33,7 +33,8 @@
 			},
 		},
 
-		mounted() {},
+		mounted() {
+		},
 	}
 </script>
 

@@ -8,23 +8,25 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "check-update-packages": "ncu",
+    "update-packages": "ncu -u & npm i"
   },
   "dependencies": {
-    "pinia": "^2.1.7",
-    "vue": "^3.4.31",
+    "pinia": "^2.2.0",
+    "vue": "^3.4.34",
     "vue-router": "^4.4.0",
-    "vuetify": "^3.6.11"
+    "vuetify": "^3.6.13"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2",
-    "@rushstack/eslint-patch": "^1.10.3",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@rushstack/eslint-patch": "^1.10.4",
+    "@vitejs/plugin-vue": "^5.1.1",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^9.6.0",
+    "eslint": "^9.8.0",
     "eslint-plugin-vue": "^9.27.0",
     "less": "^4.2.0",
-    "prettier": "^3.3.2",
-    "vite": "^5.3.3"
+    "prettier": "^3.3.3",
+    "vite": "^5.3.5"
   }
 }

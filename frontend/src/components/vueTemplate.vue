@@ -11,7 +11,9 @@
 
 		emits: {},
 
-		data: () => ({}),
+		data: () => {
+			return {};
+		},
 
 		computed: {},
 
