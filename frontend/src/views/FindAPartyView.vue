@@ -1,17 +1,15 @@
 <template>
-	<main>
-		<v-btn color="primary">
-			Filtrer les parties
-		</v-btn>
-		<v-btn v-if="true" icon="fa-solid fa-grip-lines"></v-btn>
-		<v-btn v-else icon="fa-solid fa-grip"></v-btn>
+	<v-btn color="primary">
+		Filtrer les parties
+	</v-btn>
+	<v-btn v-if="true" icon="fa-solid fa-grip-lines"></v-btn>
+	<v-btn v-else icon="fa-solid fa-grip"></v-btn>
 
-		<partySummary
-			v-for="party in parties"
-			:key="party.id"
-			:partyData="party"
-		/>
-	</main>
+	<partySummary
+		v-for="party in parties"
+		:key="party.id"
+		:partyData="party"
+	/>
 </template>
 
 <script>

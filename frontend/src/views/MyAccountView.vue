@@ -1,12 +1,10 @@
 <template>
-	<main>
-		<v-btn color="primary">
-			Deconnexion
-		</v-btn>
-		<v-btn color="secondary">
-			Supprimer mon compte
-		</v-btn>
-</main>
+	<v-btn color="primary">
+		Deconnexion
+	</v-btn>
+	<v-btn color="secondary">
+		Supprimer mon compte
+	</v-btn>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
 <template>
-	<main>
-		Home page
-	</main>
+	Home page
 </template>
 
 <script>

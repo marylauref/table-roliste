@@ -1,7 +1,5 @@
 <template>
-	<main>
-		My parties page
-	</main>
+	My parties page
 </template>
 
 <script>

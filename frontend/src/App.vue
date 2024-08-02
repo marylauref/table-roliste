@@ -9,7 +9,9 @@
 		<navBarComponent></navBarComponent>
 		<v-main>
 			<breadCrumbs></breadCrumbs>
-			<RouterView />
+			<contentLayout>
+				<RouterView />
+			</contentLayout>
 		</v-main>
 	</v-app>
 </template>
@@ -18,6 +20,7 @@
 	import { RouterView } from 'vue-router'
 	import breadCrumbs from "./components/breadCrumbs.vue"
 	import navBarComponent from "./components/navBar/navBarComponent.vue"
+	import contentLayout from "./components/contentLayout.vue"
 	// import { RouterLink, RouterView } from 'vue-router'
 	// import HelloWorld from './components/HelloWorld.vue'
 
@@ -26,6 +29,7 @@
 			RouterView,
 			breadCrumbs,
 			navBarComponent,
+			contentLayout,
 		},
 
 		props: {},
