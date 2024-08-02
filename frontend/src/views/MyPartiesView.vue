@@ -7,7 +7,7 @@
 	>
 		<template v-slot:item.game="{ value }">
 			<div class="td-game">
-				{{ value.name }}
+				{{ value.title }}
 				<genericIcon v-if="!value.isPartyConfirmed"
 					icon="fa-solid fa-triangle-exclamation"
 					color="warning"
@@ -53,24 +53,6 @@ export default {
 	},
 
 	computed: {
-		// columns() {
-		// 	return [
-		// 		{
-		// 			title: "Horaires",
-		// 			key: "schedule",
-		// 			value: this.scheduleTemplate,
-		// 		},
-		// 		{
-		// 			title: "Jeux",
-		// 			key: "game",
-		// 			width: "100%",
-		// 		},
-		// 		{
-		// 			title: "N° table",
-		// 			key: "tableNumber",
-		// 		},
-		// 	];
-		// },
 	},
 
 	watch: {},
@@ -84,11 +66,11 @@ export default {
 					fakeData.push({
 						schedule: new Date(2024, 9, 15, parseInt(Math.random()*10) + 13, parseInt(Math.random()*60)).toISOString(),
 						game: {
-							name: "Partie " + i,
+							title: "Partie " + i,
 							isPartyConfirmed: Math.random() < 0.6,
 						},
 						tableNumber: parseInt(Math.random()*100),
-						id: i
+						id: i,
 					});
 				}
 				return fakeData;
@@ -114,7 +96,7 @@ export default {
 		},
 
 		goToPartyView(rowId) {
-			this.$router.push({ name: 'myPartiesParty', params: { id: rowId } })
+			this.$router.push({ name: 'myPartiesParty', params: { id: rowId } });
 		},
 	},
 
