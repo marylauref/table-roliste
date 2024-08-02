@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import addBreadCrumbMetaData from './breadCrumb'
+import addAllBreadCrumbMetaData from './breadCrumb'
 import HomeView from '../views/HomeView.vue'
 import FindAPartyView from '../views/FindAPartyView.vue'
 import ConnexionView from '../views/ConnexionView.vue'
 import MyAccountView from '../views/MyAccountView.vue'
 import MyPartiesView from '../views/MyPartiesView.vue'
+import PartyView from '../views/PartyView.vue'
 
 const routesOptions = {
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,10 +59,23 @@ const routesOptions = {
 		{
 			path: '/MyParties',
 			name: 'myParties',
-			component: MyPartiesView,
 			meta: {
 				text: "Mes parties",
 			},
+			children: [
+				{
+					path: "",
+					component: MyPartiesView,
+				},
+				{
+					path: 'Party/:id',
+					name: "myPartiesParty",
+					component: PartyView,
+					meta: {
+						text: "Détails de la partie",
+					},
+				},
+			],
 		},
 		// {
 		// 	path: '/about',
@@ -81,7 +95,7 @@ const routesOptions = {
 		},
 	]
 };
-addBreadCrumbMetaData(routesOptions.routes);
+addAllBreadCrumbMetaData(routesOptions.routes);
 const router = createRouter(routesOptions);
 
 export default router

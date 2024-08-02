@@ -114,7 +114,7 @@ export default {
 		},
 
 		goToPartyView(rowId) {
-			console.log("goToPartyView rowId", rowId);
+			this.$router.push({ name: 'myPartiesParty', params: { id: rowId } })
 		},
 	},
 

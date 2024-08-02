@@ -25,8 +25,11 @@
 				let breadCrumb = this.$route.meta.breadCrumb;
 				if (breadCrumb === undefined) return [];
 
-				const lastIndex = breadCrumb.length - 1;
-				breadCrumb[lastIndex].disabled = true;
+				breadCrumb.forEach(breadCrumbItem => {
+					if (breadCrumbItem.to === undefined) {
+						breadCrumbItem.disabled = true;
+					}
+				});
 				return breadCrumb;
 			},
 		},
