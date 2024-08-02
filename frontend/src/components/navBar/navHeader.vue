@@ -2,7 +2,7 @@
 	<v-app-bar>
 		<v-toolbar color="primary">
 			<v-btn icon :to="'/'">
-				<v-icon icon="fa-solid fa-dice-d20"/>
+				<genericIcon icon="fa-solid fa-dice-d20"/>
 			</v-btn>
 			<v-app-bar-title>Table Roliste</v-app-bar-title>
 

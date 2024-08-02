@@ -1,5 +1,5 @@
 <template>
-	<v-icon icon="fa-solid fa-dice-d20"
+	<genericIcon icon="fa-solid fa-dice-d20"
 		color="primary"
 	/>
 	<h1>Connexion</h1>

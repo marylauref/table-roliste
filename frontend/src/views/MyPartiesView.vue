@@ -8,7 +8,7 @@
 		<template v-slot:item.game="{ value }">
 			<div class="td-game">
 				{{ value.name }}
-				<v-icon v-if="!value.isPartyConfirmed"
+				<genericIcon v-if="!value.isPartyConfirmed"
 					icon="fa-solid fa-triangle-exclamation"
 					color="warning"
 				/>
@@ -135,6 +135,6 @@ export default {
 	.td-game {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: center;
 	}
 </style>

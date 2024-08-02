@@ -13,6 +13,8 @@ import colors from 'vuetify/util/colors'
 import App from './App.vue'
 import router from './router/routes'
 
+import genericIcon from "./components/genericIcon.vue"
+
 const app = createApp(App)
 
 const vuetify = createVuetify({
@@ -37,8 +39,9 @@ const vuetify = createVuetify({
     }
 });
 
-app.use(createPinia())
-app.use(router)
-app.use(vuetify)
+app.use(createPinia());
+app.use(router);
+app.use(vuetify);
+app.component("genericIcon", genericIcon);
 
 app.mount('#app')
