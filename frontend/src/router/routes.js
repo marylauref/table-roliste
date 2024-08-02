@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import addBreadCrumbMetaData from './breadCrumb'
 import HomeView from '../views/HomeView.vue'
 import FindAPartyView from '../views/FindAPartyView.vue'
+import ConnexionView from '../views/ConnexionView.vue'
 import MyAccountView from '../views/MyAccountView.vue'
 import MyPartiesView from '../views/MyPartiesView.vue'
 
@@ -13,7 +14,7 @@ const routesOptions = {
 			name: 'home',
 			component: HomeView,
 			alias: "/home",
-			redirect: '/findParties',
+			redirect: '/Connexion',
 			meta: {
 				text: "Accueil",
 			},
@@ -27,7 +28,7 @@ const routesOptions = {
 			},
 		},
 		{
-			path: '/findParties',
+			path: '/FindParties',
 			name: 'findAParty',
 			component: FindAPartyView,
 			meta: {
@@ -70,6 +71,14 @@ const routesOptions = {
 		// 	// which is lazy-loaded when the route is visited.
 		// 	component: () => import('../views/AboutView.vue')
 		// }
+		{
+			path: '/Connexion',
+			name: 'connexion',
+			component: ConnexionView,
+			meta: {
+				text: "Connexion",
+			},
+		},
 	]
 };
 addBreadCrumbMetaData(routesOptions.routes);

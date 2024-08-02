@@ -5,7 +5,13 @@ export const navBarMenuButtonStore = defineStore( "menu", {
 
 	state: () => {
 		return {
-			routeNameList: ["home", "myAccount", "findAParty", "myParties"],
+			routeNameList: [
+				"home",
+				"myAccount",
+				"findAParty",
+				"myParties",
+				"connexion",
+			],
 		};
 	},
 
