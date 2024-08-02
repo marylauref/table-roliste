@@ -35,5 +35,6 @@
 		align-items: flex-start;
 		gap: 20px;
 		padding: 15px;
+		overflow: auto;
 	}	
 </style>
